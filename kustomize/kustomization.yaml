@@ -4,3 +4,10 @@ resources:
   - hpa.yaml
   - deployment.yaml
   - service.yaml
+patches:
+  - path: ingress-patch.yaml
+    target:
+      kind: Service
+      name: podinfo
+      namespace: default
+      version: v1
