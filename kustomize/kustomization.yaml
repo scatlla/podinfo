@@ -4,10 +4,11 @@ resources:
   - hpa.yaml
   - deployment.yaml
   - service.yaml
+namespace: ping
 patches:
   - path: ingress-patch.yaml
     target:
       kind: Service
       name: podinfo
-      namespace: default
+      namespace: ping
       version: v1
